@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 12:06:27 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/10/01 17:07:41 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/10/01 21:07:27 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,7 @@ int main()
 		if (!std::getline(std::cin, command))
 		{
 			if (std::cin.eof())
-			{	
-				std::cin.clear();
-				std::cin.ignore();
-				continue ;
-			}
+				break ;
 		}
 		if (command == "EXIT")
 			return (0);

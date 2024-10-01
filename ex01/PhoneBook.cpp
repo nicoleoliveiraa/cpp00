@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 11:20:54 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/10/01 16:27:08 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/10/01 21:19:55 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,14 @@ std::string catch_line()
 
 	str = "";
 	while (str == "")
-		std::getline(std::cin, str);
+	{
+		//std::getline(std::cin, str);
+		if (!std::getline(std::cin, str))
+		{
+			if (std::cin.eof())
+				return(NULL);
+		}
+	}
 	return (str);
 }
 
