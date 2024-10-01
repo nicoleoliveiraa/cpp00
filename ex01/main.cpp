@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 12:06:27 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/10/01 14:00:33 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/10/01 17:07:41 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,27 @@ int main()
 	PhoneBook PhoneBook;
 	std::string command;
 
-	std::getline(std::cin, command);
-	while ()
-	PhoneBook.add_contact();
+	std::cout << "Enter one of these three commands: ADD, SEARCH or EXIT." \
+	<< std::endl;
+	while (1)
+	{
+		if (!std::getline(std::cin, command))
+		{
+			if (std::cin.eof())
+			{	
+				std::cin.clear();
+				std::cin.ignore();
+				continue ;
+			}
+		}
+		if (command == "EXIT")
+			return (0);
+		if (command == "ADD")
+			PhoneBook.add_contact();
+		if (command == "SEARCH")
+			PhoneBook.search_contact();
+		std::cout << "Enter one of these three commands: ADD, SEARCH or EXIT." \
+		<< std::endl;
+	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 11:48:25 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/10/01 13:14:24 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/10/01 15:52:58 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,22 @@ void Contact::set_string(int i, std::string str)
 		default:
 			break;
 	}
-	// std::cout << this->first_name << std::endl;
-	// std::cout << this->last_name << std::endl;
+}
+
+std::string Contact::get_string(int i)
+{
+	switch (i)
+	{
+		case 1:
+			return this->first_name;
+		case 2:
+			return this->last_name;
+		case 3:
+			return this->nickname;
+		case 4:
+			return this->phone_number;
+		case 5:
+			return this->darkest_secret;
+	}
+	return NULL;
 }

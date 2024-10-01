@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 11:12:09 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/10/01 13:33:03 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/10/01 14:45:11 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class Contact
 
 	public:
 		void set_string(int i, std::string str);
+		std::string get_string(int i);
 };
 
 #endif
