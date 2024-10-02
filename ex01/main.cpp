@@ -6,19 +6,19 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 12:06:27 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/10/01 21:07:27 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/10/02 17:04:45 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#include"phonebookutils.hpp"
 
 int main()
 {
 	PhoneBook PhoneBook;
 	std::string command;
 
-	std::cout << "Enter one of these three commands: ADD, SEARCH or EXIT." \
-	<< std::endl;
+	std::cout << BOLD_WHITE << "Enter one of these three commands:" << BOLD_RED \
+	<< " ADD, SEARCH or EXIT." << RESET << std::endl;
 	while (1)
 	{
 		if (!std::getline(std::cin, command))
@@ -32,8 +32,9 @@ int main()
 			PhoneBook.add_contact();
 		if (command == "SEARCH")
 			PhoneBook.search_contact();
-		std::cout << "Enter one of these three commands: ADD, SEARCH or EXIT." \
-		<< std::endl;
+		std::cout << std::endl;
+		std::cout << BOLD_WHITE << "Enter one of these three commands:" << BOLD_RED \
+		<< " ADD, SEARCH or EXIT." << RESET << std::endl;
 	}
 	return (0);
 }

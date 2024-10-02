@@ -6,14 +6,14 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 11:12:09 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/10/01 14:45:11 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/10/02 16:44:35 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
 #define CONTACT_HPP
 
-#include <iostream>
+#include"phonebookutils.hpp"
 
 class Contact
 {

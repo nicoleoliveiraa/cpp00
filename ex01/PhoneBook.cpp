@@ -6,21 +6,26 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 11:20:54 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/10/01 21:19:55 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/10/02 17:30:02 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#include"phonebookutils.hpp"
 
 PhoneBook::PhoneBook()
 {
 	this->contact_nbr = 0;
-	std::cout << "Welcome to your PhoneBook!" << std::endl;
+	std::cout << std::endl;
+	std::cout << BOLD_MAGENTA << "Welcome to your PhoneBook!" << RESET << std::endl;
+	std::cout << std::endl;
 }
 
 PhoneBook::~PhoneBook()
 {
-	std::cout << "All the contacts are lost forever!!" << std::endl;
+	std::cout << std::endl;
+	std::cout << BOLD_MAGENTA << "All the contacts are lost forever!" << RESET << std::endl;
+	std::cout << BOLD_MAGENTA << "BYE!!" << RESET << std::endl;
+	std::cout << std::endl;
 }
 
 std::string catch_line()
@@ -30,11 +35,10 @@ std::string catch_line()
 	str = "";
 	while (str == "")
 	{
-		//std::getline(std::cin, str);
 		if (!std::getline(std::cin, str))
 		{
 			if (std::cin.eof())
-				return(NULL);
+				break ;
 		}
 	}
 	return (str);
@@ -46,21 +50,26 @@ void PhoneBook::add_contact()
 	int i;
 
 	i = this->contact_nbr;
-	std::cout << i << std::endl;
-	std::cout << "Add new contact:" << std::endl;
-	std::cout << "Enter the first name:" << std::endl;
+	std::cout << std::endl;
+	std::cout << BOLD_RED << "Add new contact:" << RESET << std::endl;
+	std::cout << std::endl;
+	std::cout << BOLD_WHITE << "Enter the first name:" << RESET << std::endl;
 	str = catch_line();
 	this->contact[i].set_string(1, str);
-	std::cout << "Enter the last name:" << std::endl;
+	std::cout << std::endl;
+	std::cout << BOLD_WHITE << "Enter the last name:" << RESET << std::endl;
 	str = catch_line();
 	this->contact[i].set_string(2, str);
-	std::cout << "Enter the nickname:" << std::endl;
+	std::cout << std::endl;
+	std::cout << BOLD_WHITE << "Enter the nickname:" << RESET << std::endl;
 	str = catch_line();
 	this->contact[i].set_string(3, str);
-	std::cout << "Enter the phone number:" << std::endl;
+	std::cout << std::endl;
+	std::cout << BOLD_WHITE << "Enter the phone number:" << RESET << std::endl;
 	str = catch_line();
 	this->contact[i].set_string(4, str);
-	std::cout << "Enter the darkest secret:" << std::endl;
+	std::cout << std::endl;
+	std::cout << BOLD_WHITE << "Enter the darkest secret:" << RESET << std::endl;
 	str = catch_line();
 	this->contact[i].set_string(5, str);
 	if (i < 7)
@@ -113,37 +122,42 @@ void PhoneBook::search_contact()
 	int i = 0;
 	std::string index;
 	
-	std::cout << "---------------------------------------------" << std::endl;
+	std::cout << std::endl;
+	std::cout << BOLD_YELLOW << "Find a contact:" << RESET << std::endl;
+	std::cout << std::endl;
+	std::cout << BOLD_YELLOW << "---------------------------------------------" << RESET << std::endl;
 	while (i <= 7)
 	{
-		std::cout << "|";
+		std::cout << BOLD_YELLOW << "|" << RESET;
 		print_contact_string(change_int_in_str(i));
-		std::cout << "|";
+		std::cout << BOLD_YELLOW << "|" << RESET;
 		print_contact_string(this->contact[i].get_string(1));
-		std::cout << "|";
+		std::cout << BOLD_YELLOW << "|" << RESET;
 		print_contact_string(this->contact[i].get_string(2));
-		std::cout << "|";
+		std::cout << BOLD_YELLOW << "|" << RESET;
 		print_contact_string(this->contact[i].get_string(3));
-		std::cout << "|" << std::endl;
+		std::cout << BOLD_YELLOW << "|" << RESET << std::endl;
 		i++;
 	}
-	std::cout << "---------------------------------------------" << std::endl;
-	std::cout << "Choose one contact to see, by index:" << std::endl;
+	std::cout << BOLD_YELLOW << "---------------------------------------------" << RESET << std::endl;
+	std::cout << std::endl;
+	std::cout << BOLD_WHITE << "Choose one contact to see, by index:" << RESET << std::endl;
 	index = catch_line();
+	std::cout << std::endl;
 	i = change_str_in_int(index);
 	if (i < 0 || i > 7)
-		std::cout << "Incorrect index!" << std::endl;
+		std::cout << RED << "Incorrect index!" << RESET << std::endl;
 	else
 	{
-		std::cout << "First Name:" << std::endl;
+		std::cout << BOLD_WHITE << "First Name:" << RESET << std::endl;
 		std::cout << this->contact[i].get_string(1) << std::endl;
-		std::cout << "Last Name:" << std::endl;
+		std::cout << BOLD_WHITE << "Last Name:" << RESET << std::endl;
 		std::cout << this->contact[i].get_string(2) << std::endl;
-		std::cout << "Nickname:" << std::endl;
+		std::cout << BOLD_WHITE << "Nickname:" << RESET << std::endl;
 		std::cout << this->contact[i].get_string(3) << std::endl;
-		std::cout << "Phone Number:" << std::endl;
+		std::cout << BOLD_WHITE << "Phone Number:" << RESET << std::endl;
 		std::cout << this->contact[i].get_string(4) << std::endl;
-		std::cout << "Darkest Secrect:" << std::endl;
+		std::cout << BOLD_WHITE << "Darkest Secrect:" << RESET << std::endl;
 		std::cout << this->contact[i].get_string(5) << std::endl;
 	}
 }
