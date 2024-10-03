@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 16:42:40 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/10/02 16:59:52 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/10/03 09:45:06 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,5 @@
 #define BOLD_MAGENTA "\033[1;35m"
 #define BOLD_CYAN    "\033[1;36m"
 #define BOLD_WHITE   "\033[1;37m"
-
-// Example usage
-// std::cout << RED << "This text is red." << RESET << std::endl;
-// std::cout << GREEN << "This text is green." << RESET << std::endl;
-// std::cout << BLUE << "This text is blue." << RESET << std::endl;
 
 #endif

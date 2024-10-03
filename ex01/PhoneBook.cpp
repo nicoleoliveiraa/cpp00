@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 11:20:54 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/10/02 17:30:02 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/10/03 10:24:19 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,15 @@ PhoneBook::PhoneBook()
 {
 	this->contact_nbr = 0;
 	std::cout << std::endl;
-	std::cout << BOLD_MAGENTA << "Welcome to your PhoneBook!" << RESET << std::endl;
+	std::cout << BOLD_MAGENTA << "Welcome to your PhoneBook! 📞" << RESET << std::endl;
 	std::cout << std::endl;
 }
 
 PhoneBook::~PhoneBook()
 {
 	std::cout << std::endl;
-	std::cout << BOLD_MAGENTA << "All the contacts are lost forever!" << RESET << std::endl;
-	std::cout << BOLD_MAGENTA << "BYE!!" << RESET << std::endl;
+	std::cout << BOLD_MAGENTA << "Closing the PhoneBook, and all the contacts are lost forever!" << RESET << std::endl;
+	std::cout << BOLD_MAGENTA << "BYE!! 👋" << RESET << std::endl;
 	std::cout << std::endl;
 }
 
@@ -126,6 +126,16 @@ void PhoneBook::search_contact()
 	std::cout << BOLD_YELLOW << "Find a contact:" << RESET << std::endl;
 	std::cout << std::endl;
 	std::cout << BOLD_YELLOW << "---------------------------------------------" << RESET << std::endl;
+	std::cout << BOLD_YELLOW << "|" << RESET;
+	std::cout << WHITE << "  INDEX   " << RESET;
+	std::cout << BOLD_YELLOW << "|" << RESET;
+	std::cout << WHITE << " F. NAME  " << RESET;
+	std::cout << BOLD_YELLOW << "|" << RESET;
+	std::cout << WHITE << " L. NAME  " << RESET;
+	std::cout << BOLD_YELLOW << "|" << RESET;
+	std::cout << WHITE << " NICKNAME " << RESET;
+	std::cout << BOLD_YELLOW << "|" << RESET << std::endl;
+	std::cout << BOLD_YELLOW << "---------------------------------------------" << RESET << std::endl;
 	while (i <= 7)
 	{
 		std::cout << BOLD_YELLOW << "|" << RESET;
@@ -143,10 +153,16 @@ void PhoneBook::search_contact()
 	std::cout << std::endl;
 	std::cout << BOLD_WHITE << "Choose one contact to see, by index:" << RESET << std::endl;
 	index = catch_line();
+	if (index == "")
+		return ;
 	std::cout << std::endl;
 	i = change_str_in_int(index);
 	if (i < 0 || i > 7)
 		std::cout << RED << "Incorrect index!" << RESET << std::endl;
+	else if (i > this->contact_nbr -1)
+	{
+		std::cout << RED << "This contact is empty!" << RESET << std::endl;
+	}
 	else
 	{
 		std::cout << BOLD_WHITE << "First Name:" << RESET << std::endl;
