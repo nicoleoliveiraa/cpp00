@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 12:06:27 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/10/02 17:04:45 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/10/03 17:15:27 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main()
 	std::string command;
 
 	std::cout << BOLD_WHITE << "Enter one of these three commands:" << BOLD_RED \
-	<< " ADD, SEARCH or EXIT." << RESET << std::endl;
+	<< " ADD, SEARCH or EXIT" << RESET << std::endl;
 	while (1)
 	{
 		if (!std::getline(std::cin, command))
@@ -34,7 +34,7 @@ int main()
 			PhoneBook.search_contact();
 		std::cout << std::endl;
 		std::cout << BOLD_WHITE << "Enter one of these three commands:" << BOLD_RED \
-		<< " ADD, SEARCH or EXIT." << RESET << std::endl;
+		<< " ADD, SEARCH or EXIT" << RESET << std::endl;
 	}
 	return (0);
 }
