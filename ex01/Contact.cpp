@@ -6,11 +6,11 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 11:48:25 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/10/02 16:44:46 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/10/04 14:43:36 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"phonebookutils.hpp"
+#include "Contact.hpp"
 
 void Contact::set_string(int i, std::string str)
 {
