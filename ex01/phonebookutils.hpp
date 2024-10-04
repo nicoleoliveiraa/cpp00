@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 16:42:40 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/10/03 09:45:06 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/10/04 14:07:58 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <csignal>
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
 
